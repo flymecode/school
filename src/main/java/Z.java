@@ -1,13 +1,10 @@
-import lombok.Data;
-
 /**
  * @author tianyu
  * @date 2019/5/31
  */
-@Data
 public class Z {
-    private Double Zmax;
-    private Double Zmin;
+    private double Zmin = 0;
+    private double Zmax = 0;
 
     public void computer(double A ,double B) {
         double[] arr = new double[3];
@@ -27,4 +24,14 @@ public class Z {
             this.Zmin = Math.min(Math.min(arr[0], arr[1]), arr[2]);
         }
     }
+
+    public Double getZmax() {
+        return Zmax;
+    }
+
+
+    public Double getZmin() {
+        return Zmin;
+    }
+
 }

@@ -55,7 +55,7 @@ public class Component {
     }
 
     public Double getYi() {
-        return this.Ki * getXi();
+        return this.getKi() * getXi();
     }
 
     public Double getMi() {

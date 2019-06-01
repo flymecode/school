@@ -7,7 +7,10 @@ import java.util.Scanner;
  * @date 2019/5/29
  */
 public class Main {
-
+//        213.9 5.44 8.314
+//        2
+//        0.845 190.6 4.604 1 1 0.011
+//        0.1474 305.4 4.88 1 1 0.099
     static Cons cons = new Cons();
     static Scanner input = null;
     public static void main(String[] args) {
@@ -23,12 +26,12 @@ public class Main {
         int count = input.nextInt();
         /**----------------------------------输入每个组分---------------------------------------------*/
         List<Component> list = new ArrayList<>();
-        System.out.println("请问输入每条组分的数据 Tci、Pci、Zfi、Pri、Tri、W");
+        System.out.println("请问输入每条组分的数据 Zfi、Tci、Pci、Pri、Tri、W");
         for (int i = 0; i < count; i++) {
             Component component = new Component(cons);
+            component.setZfi(input.nextDouble());
             component.setTci(input.nextDouble());
             component.setPci(input.nextDouble());
-            component.setZfi(input.nextDouble());
 
             component.setPri(input.nextDouble());
             component.setTri(input.nextDouble());
@@ -54,7 +57,7 @@ public class Main {
                 do {
                     // TODO 从第三步骤到第二步骤
                     fe = Fe(list, e);
-                    if (Math.abs(fe - 0.0001) > 0) {
+                    if (Math.abs(fe - 0.0001) != 0) {
                         // 到达步骤2
                         component.setE(e);
                         flag = false;
@@ -80,8 +83,8 @@ public class Main {
         getLi(list);
         for (int i = 0; i < list.size(); i++) {
             Component component = list.get(i);
-            if(Math.abs(component.getFiG() / component.getFiL() - 1) - 0.000001 < 0) {
-                System.out.printf("Xi= %l,Yi =%l,Ki=%l,E = %l",component.getXi(), component.getYi(), component.getKi(), component.getE());
+            if(Math.abs(component.getFiG() / component.getFiL() - 1) - 0.000001 != 0) {
+                System.out.printf("Xi= %f,Yi =%f,Ki=%f,E = %f",component.getXi(), component.getYi(), component.getKi(), component.getE());
             }
         }
 

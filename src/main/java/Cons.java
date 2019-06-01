@@ -26,7 +26,7 @@ public class Cons {
 
 
     void setA(List<Component> list) {
-        Double a = null;
+        double a = 0;
         int count = list.size();
         for (int i = 0; i < count-1; i++) {
             for (int j = i + 1; j < count; j++) {
@@ -41,7 +41,7 @@ public class Cons {
     }
 
     void setB(List<Component> list) {
-        Double b = null;
+        double b = 0;
         int count = list.size();
         for (int i = 0; i < count; i++) {
             Component component = list.get(i);
